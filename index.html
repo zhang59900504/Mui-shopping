@@ -8,13 +8,37 @@
     <title>云南土特产批发</title>
     <link rel="stylesheet" href="../web/css/mui.min.css">
     <link rel="stylesheet" href="../web/css/icons-extra.css">
+    <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
     <link rel="stylesheet" href="../web/css/Style.css">
 </head>
 <body>
 <!-- 结构内容区域：开始 -->
 <div class="MaxBody" >
     <!-- Banner区域：开始 -->
-    <div class="Banner"></div>
+    <div class="Banner">
+        <!-- Swiper -->
+        <div class="swiper-container Banner-index">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="../web/img/muwu.jpg" class="absolute" alt="轮播图1">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="../web/img/shuijiao.jpg" class="absolute" alt="轮播图1">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="../web/img/yuantiao.jpg" class="absolute" alt="轮播图1">
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
     <!-- Banner区域：结束 -->
 
     <!-- Banner区域：开始 -->
@@ -43,7 +67,16 @@
     </a>
 </nav>
 <!-- 底部tabBar区域：结束 -->
-
+<script src="../web/js/jquery.min.js"></script>
 <script src="../web/js/mui.min.js"></script>
+<script src="../web/js/swiper-4.3.3.min.js"></script>
+<script>
+     var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+</script>
+
 </body>
 </html>

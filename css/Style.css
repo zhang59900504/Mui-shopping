@@ -35,6 +35,13 @@ img{color:#fff;}
 .NoClike{-webkit-appearance: none;-moz-appearance:none;-ms-appearance:none; -webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color: transparent;-webkit-touch-callout: none; -webkit-user-select: none;}
 /*无点击效果*/
 
+/*Swiper：开始*/
+.swiper-container{height: 42vw;}
+.Banner-index a{display: block;width: 100%; height: 100%;position: relative;}
+.Banner-index a>img{display: block; max-width: 100%;min-height: 100%;}
+.swiper-pagination.swiper-pagination-bullets{bottom: 2px;}
+/*Swiper：结束*/
+
 
 /*首页样式：开始*/
 /*首页样式：结束*/
