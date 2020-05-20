@@ -1,5 +1,6 @@
 ﻿/*======公共样式：开始=======*/
-body,html {width:100%;height:auto;  }
+a,p,ul,li,body,html{margin: 0; padding: 0;}
+body,html {width:100%;height:auto; background: #f8f8f8; }
 div.MaxBody{width:100%;height:auto; min-height:100vh;max-width:640px;margin:0 auto;min-width:320px;z-index:0;position:relative;padding-bottom:50px ;}
 img.ImgMould {position:absolute;z-index:-19940616;display:block;max-width:100%;max-height:100%;visibility:hidden;top:0;left:0;min-height:320px;}
 div.Center {position:absolute;width:auto;height:auto;left:0;top:0;bottom:0;right:0;margin:auto;z-index:1;}
@@ -40,8 +41,36 @@ img{color:#fff;}
 .Banner-index a{display: block;width: 100%; height: 100%;position: relative;}
 .Banner-index a>img{display: block; max-width: 100%;min-height: 100%;}
 .swiper-pagination.swiper-pagination-bullets{bottom: 2px;}
+
+.active-underline{   position: absolute;  bottom: 0;  left: 0;  height: 2px;  background: rgb(6, 173, 240); width: 100%;transition: all 0.05s;}
+#header {   width: 100%;  height: 43px; overflow: hidden;  font: 12px/40px hiragino sans gb, microsoft yahei, simsun;}
+#header .swiper-slide {  text-align: center; width: 56px; width: auto;}
+.BasicList-Hengxiang{ overflow-x:auto;overflow-y:hidden;}
+.BasicList-Hengxiang ul{display: block;margin: 0;padding: 0; white-space: nowrap;}
+.BasicList-Hengxiang li{display: inline-block; }
+.BasicList-enter{overflow:hidden;}
+.BasicList-enter ul{display: block; width:calc(100% + 5vw);overflow: hidden;}
+.BasicList-enter ul li{float: left; display:block; }
 /*Swiper：结束*/
 
 
 /*首页样式：开始*/
+.content{padding: 3vw;}
+.shangpinItam{background: #fff; width: 29.7vw; margin-right: 2.5vw;margin-bottom: 2.5vw;}
+.shangpinItam.mini{width: 27vw;}
+.shangpinItam.mini .top a{min-height: 27vw;}
+
+.shangpinItam .top a{display: block; position: relative;overflow: hidden;min-height: 29.7vw;}
+.shangpinItam .top a img{min-width: 100%;}
+.toubiao{position: absolute; ; left: -4vw; top: 3vw; height: 4vw; line-height: 4vw; font-size: 2.5vw; font-weight: bold;
+    background: rgba(255, 0, 0, 0.623); width: 18vw;color: #fff;text-align: center; transform: rotate(-45deg);}
+    .shangpinItam .top .quehuo{color: #fff;text-align: center;display: block;position: absolute;z-index: 5;bottom: 0;width: 100%;
+    line-height: 1.8em;font-size: 3.2vw;background: rgba(0, 0, 0, 0.575);}
+    .shangpinItam .top .quehuo.yusou{background: #007bff7c}
+.shangpinItam p.title{height: 2.3em; margin: 6px; color: #555; word-wrap:break-word; font-size: 13px;  line-height: 1.3em;  white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;}
+label.price{font-size: 13px;}
+.addCat{padding: 4px;}
+label.price span{color: red;}
+.Cat-Icon{float: right;    }
+.Cat-Icon span{ transform: scale(0.9);  font-size: 12px; font-weight: bold; border: 1px solid #007aff; color: #007aff;padding: 3px;border-radius: 50%;}
 /*首页样式：结束*/

@@ -11,70 +11,227 @@
     <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
     <link rel="stylesheet" href="../web/css/Style.css">
 </head>
-<body>
-<!-- 结构内容区域：开始 -->
-<div class="MaxBody" >
-    <!-- Banner区域：开始 -->
-    <div class="Banner">
-        <!-- Swiper -->
-        <div class="swiper-container Banner-index">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="../web/img/muwu.jpg" class="absolute" alt="轮播图1">
-                    </a>
+<body >
+    <div id="app">
+            <div class="MaxBody" >
+                    <!-- Banner区域：开始 -->
+                    <div class="Banner">
+                        <!-- Swiper -->
+                        <div class="swiper-container Banner-index">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="../web/img/muwu.jpg" class="absolute" alt="轮播图1">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="../web/img/shuijiao.jpg" class="absolute" alt="轮播图1">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">
+                                        <img src="../web/img/yuantiao.jpg" class="absolute" alt="轮播图1">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <!-- Banner区域：结束 -->
+                
+                        <!-- 横向列表模块：开始 -->
+                        <div class="BasicList">
+                            <div class="zhanshiImg">
+                                <img src="../web/img/微信图片_20200520111504.png" class="bg" alt="流程介绍图" />
+                            </div>
+                            <div class="zhanshiImg">
+                                <img src="../web/img/微信图片_biaoti.png" class="bg" alt="标题" />
+                            </div>
+                            <div class="content">
+                                 <div class="BasicList-Hengxiang">
+                                    <ul>
+                                        <li v-for="cont in 15">
+                                            <div class="shangpinItam mini">
+                                                    <div class="top">
+                                                        <a href="#">
+                                                             <img alt="商品图片" class="bg" src="../web/img/60x60.gif">
+                                                        </a>
+                                                    </div>
+                                                    <div class="bottom" >
+                                                        <p class="title">标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                                                        <div class="addCat">
+                                                            <label class="price">
+                                                                <!-- <s>￥500.00</s> -->
+                                                                <span>￥50.00</span>
+                                                            </label>
+                                                            <a class="Cat-Icon" >
+                                                                    <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span> 
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </li>
+                                    </ul>  
+                                 </div>
+                            </div>
+                        </div>
+                        <!-- 横向列表模块：结束 -->
+                    
+                    
+                        <div class="BasicList">
+                                <div class="zhanshiImg">
+                                    <img src="../web/img/微信图片_biaoti.png" class="bg" alt="标题" />
+                                </div>
+                                <div class="content">
+                                        <div class="BasicList-enter">
+                                           <ul>
+                                               <li v-for="cont in 6">
+                                                   <div class="shangpinItam">
+                                                           <div class="top">
+                                                               <a href="#">
+                                                                   <p class="toubiao">爱心组农</p>
+                                                                    <img alt="商品图片" class="bg" src="../web/img/60x60.gif">
+                                                                    <p class="quehuo" style="display:none;">缺货</p>
+                                                                    <p class="quehuo yusou" >预售</p>
+                                                               </a>
+                                                           </div>
+                                                           <div class="bottom" >
+                                                               <p class="title">标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                                                               <div class="addCat">
+                                                                   <label class="price">
+                                                                       <!-- <s>￥500.00</s> -->
+                                                                       <span>￥50.00</span>
+                                                                   </label>
+                                                                   <a class="Cat-Icon" >
+                                                                           <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span> 
+                                                                   </a>
+                                                               </div>
+                                                           </div>
+                                                   </div>
+                                               </li>
+                                           </ul>  
+                                        </div>
+                                   </div>
+                        </div>
+
+
+                        <!-- 选项卡列表模块：开始 -->
+                        <div class="TabList">
+                                <div class="zhanshiImg">
+                                        <img src="../web/img/微信图片_biaoti.png" class="bg" alt="标题" />
+                                    </div>
+                            <div id="header">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide active-nav">新闻 <div class="active-underline" ></div></div>
+                                  <div class="swiper-slide">财经</div>
+                                  <div class="swiper-slide">娱乐</div>
+                                  <div class="swiper-slide">体育</div>
+                                  <div class="swiper-slide">订阅</div>
+                                  <div class="swiper-slide">微博</div>
+                                  <!-- <div class="swiper-slide">空间</div>
+                                  <div class="swiper-slide">书城</div> -->
+                                </div>
+                              </div>
+
+                              <div class="content">
+                                    <div class="BasicList-enter">
+                                       <ul>
+                                           <li v-for="cont in 6">
+                                               <div class="shangpinItam">
+                                                       <div class="top">
+                                                           <a href="#">
+                                                               <p class="toubiao">爱心组农</p>
+                                                                <img alt="商品图片" class="bg" src="../web/img/60x60.gif">
+                                                                <p class="quehuo" style="display:none;">缺货</p>
+                                                                <p class="quehuo yusou" >预售</p>
+                                                           </a>
+                                                       </div>
+                                                       <div class="bottom" >
+                                                           <p class="title">标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                                                           <div class="addCat">
+                                                               <label class="price">
+                                                                   <!-- <s>￥500.00</s> -->
+                                                                   <span>￥50.00</span>
+                                                               </label>
+                                                               <a class="Cat-Icon" >
+                                                                       <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span> 
+                                                               </a>
+                                                           </div>
+                                                       </div>
+                                               </div>
+                                           </li>
+                                       </ul>  
+                                    </div>
+                               </div>
+                        </div>
+                        <!-- 选项卡列表模块：结束 -->
+                
                 </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="../web/img/shuijiao.jpg" class="absolute" alt="轮播图1">
+                <!-- 结构内容区域：结束 -->
+                
+                <!-- 底部tabBar区域：开始 -->
+                <nav class="mui-bar mui-bar-tab">
+                    <a class="mui-tab-item mui-active" href="#tabbar">
+                        <span class="mui-icon mui-icon-home"></span>
+                        <span class="mui-tab-label">店铺首页</span>
                     </a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#">
-                        <img src="../web/img/yuantiao.jpg" class="absolute" alt="轮播图1">
+                    <a class="mui-tab-item" href="#tabbar-with-chat">
+                        <span class="mui-icon mui-icon-search"></span>
+                        <span class="mui-tab-label">快速搜索</span>
                     </a>
-                </div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
+                    <a class="mui-tab-item" href="#tabbar-with-contact">
+                        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
+                        <span class="mui-tab-label">购物车</span>
+                    </a>
+                    <a class="mui-tab-item" href="#tabbar-with-map">
+                        <span class="mui-icon mui-icon-contact"></span>
+                        <span class="mui-tab-label">我的订单</span>
+                    </a>
+                </nav>
+                <!-- 底部tabBar区域：结束 -->
     </div>
-    <!-- Banner区域：结束 -->
+<!-- 结构内容区域：开始 -->
 
-    <!-- Banner区域：开始 -->
-    <div class=""></div>
-    <!-- Banner区域：结束 -->
-</div>
-<!-- 结构内容区域：结束 -->
-
-<!-- 底部tabBar区域：开始 -->
-<nav class="mui-bar mui-bar-tab">
-    <a class="mui-tab-item mui-active" href="#tabbar">
-        <span class="mui-icon mui-icon-home"></span>
-        <span class="mui-tab-label">店铺首页</span>
-    </a>
-    <a class="mui-tab-item" href="#tabbar-with-chat">
-        <span class="mui-icon mui-icon-search"></span>
-        <span class="mui-tab-label">快速搜索</span>
-    </a>
-    <a class="mui-tab-item" href="#tabbar-with-contact">
-        <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
-        <span class="mui-tab-label">购物车</span>
-    </a>
-    <a class="mui-tab-item" href="#tabbar-with-map">
-        <span class="mui-icon mui-icon-contact"></span>
-        <span class="mui-tab-label">我的订单</span>
-    </a>
-</nav>
-<!-- 底部tabBar区域：结束 -->
 <script src="../web/js/jquery.min.js"></script>
 <script src="../web/js/mui.min.js"></script>
 <script src="../web/js/swiper-4.3.3.min.js"></script>
+<script src="../web/js/vue.min.js"></script>
 <script>
-     var swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-      },
+
+    var app=new Vue({
+        el:"#app",
+        data:{
+            msg:"op"
+        }
+    })
+
+
+    //海报图轮播
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+
+
+    //选项卡列表模块
+    var navSwiper = new Swiper('#header', {
+        freeMode: true,
+        slidesPerView: 'auto',
+        freeModeSticky: true,
+        spaceBetween: 10,
+        slidesPerView: 5,
+
+    });
+    //选项卡列表模块
+    $("#header").find(".swiper-slide").click(function () {
+        var index = $(this).index();
+        var i=index<0?0:index-2;
+        navSwiper.slideTo(i);
+        var left = $(this).outerWidth(true) * index;
+        $(".active-underline").css("left", left);
     });
 </script>
 
