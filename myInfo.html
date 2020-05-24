@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1,, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title>云南土特产批发</title>
+    <link rel="stylesheet" href="../web/css/mui.min.css">
+    <link rel="stylesheet" href="../web/css/icons-extra.css">
+    <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
+    <link rel="stylesheet" href="../web/css/Style.css">
+</head>
+
+<body >
+    <div id="app">
+        <div class="MaxBody">
+            <div class="mui-card listmode">
+                <ul class="mui-table-view mui-table-view-chevron">
+                    <li class="mui-table-view-cell mui-media">
+                        <a class="mui-navigate-right" href="#account">
+                            <img class="mui-media-object mui-pull-left head-img" id="head-img" src="../web/img/shuijiao.jpg">
+                            <div class="mui-media-body">
+                                Hello MUI
+                                <p class='mui-ellipsis'>账号:hellomui</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+                            <span class="mui-badge mui-bbb" >所有订单</span>
+                            <label>我的订单</label>
+		                </a>
+                    </li>
+                </ul>
+                
+               <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell  mui-media" ><a href="#">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-card "><span class="mui-badge">1</span></span>
+		                    <div class="mui-media-body">待付款</div></a></li>
+		            <li class="mui-table-view-cell mui-media "><a href="#">
+		                    <span class="mui-icon mui-icon-download"></span>
+		                    <div class="mui-media-body">待发货</div></a></li>
+		            <li class="mui-table-view-cell mui-media "><a href="#">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-express"></span>
+		                    <div class="mui-media-body">待收货</div></a></li>
+		            <li class="mui-table-view-cell mui-media "><a href="#">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-comment" style="transform: scale(0.8);"></span>
+		                    <div class="mui-media-body">评价</div></a></li>
+		            <li class="mui-table-view-cell mui-media"><a href="#">
+		                    <span class="mui-icon mui-icon-extra mui-icon-extra-gold" style="transform: scale(0.9);"></span>
+		                    <div class="mui-media-body">退款/售后</div></a></li>
+		        </ul>
+
+
+		        <ul class="mui-table-view">
+
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    <span class="mui-badge mui-badge-danger">1</span>
+		                    <label><span class="mui-icon mui-icon-extra mui-icon-extra-cart" style="margin-right: 6px;"></span> 购物车</label>
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+                            <label><span class="mui-icon mui-icon-map" style="font-size: 20px;margin-right: 6px;"></span> 收货地址</label>
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		   
+                            <label><span class="mui-icon mui-icon-extra mui-icon-extra-custom" style="margin-right: 6px;"></span> 联系客服</label>
+		                </a>
+		            </li>
+		        </ul>
+		    </div>
+
+        </div>
+        <!-- 结构内容区域：结束 -->
+
+
+
+
+
+
+         <!-- 底部tabBar区域：开始 -->
+         <nav class="mui-bar mui-bar-tab" >
+            <a class="mui-tab-item " href="../web/shoppingCart.html">
+                <span class="mui-icon mui-icon-home"></span>
+                <span class="mui-tab-label">店铺首页</span>
+            </a>
+            <a class="mui-tab-item" href="../web/search.html">
+                <span class="mui-icon mui-icon-search"></span>
+                <span class="mui-tab-label">快速搜索</span>
+            </a>
+            <a class="mui-tab-item" href="../web/shoppingCart.html" >
+                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">1</span></span>
+                <span class="mui-tab-label">购物车</span>
+            </a>
+            <a class="mui-tab-item mui-active" href="../web/shoppingCart.html">
+                <span class="mui-icon mui-icon-contact"></span>
+                <span class="mui-tab-label">我的</span>
+            </a>
+        </nav>
+        <!-- 底部tabBar区域：结束 -->
+
+    </div>
+    <!-- 结构内容区域：开始 -->
+
+    <script src="../web/js/jquery.min.js"></script>
+    <!-- <script src="../web/js/mui.min.js"></script> -->
+
+    <script src="../web/js/vue.min.js"></script>
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "op",
+                sangpinActive:false
+            },
+            mounted() {
+               
+            },
+            methods: {
+                onShowBottomSangpin(){
+                    this.sangpinActive=!this.sangpinActive;
+                }
+            }
+        })
+		
+
+    var topbtn = $(".mui-icon-extra-top").parent(); //想要一键向上的按钮元素
+    var lastScroll = 0;
+    window.onscroll = function () {
+        //onscroll貌似为html5的属性
+        var top = $(window).scrollTop(); //初始均为0
+
+        if (top > 250) {
+            topbtn.css("display", "");
+        }
+        else {
+            //若为起始状态，则不显示向上图标
+            topbtn.css("display", "none");
+        } 
+    }
+
+
+
+
+// var x=0;
+// var y=0;
+// var p=0;
+//     $("body").on({
+//         "touchstart":function(e){
+//             x = e.originalEvent.changedTouches[0].pageX;
+//             y = e.originalEvent.changedTouches[0].pageY;
+//             console.log(y);
+//         },
+//         "touchmove":function(e){
+//             var top = $(window).scrollTop(); //初始均为0
+//             if(top<=0){
+//                 zy=e.originalEvent.changedTouches[0].pageY
+//                 w=$(window).width();
+//                 p= -(y- zy);
+//                 console.log(p);
+//                 if(p>=100) p=100;
+//                 $(".MaxBody").css("top",p);
+//             }
+//         },
+//         "touchend":function(e){
+//            $(".MaxBody").css("top",0);
+//         }
+
+//     })
+
+
+    </script>
+
+</body>
+
+</html>

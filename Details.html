@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1,, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title>云南土特产批发</title>
+    <link rel="stylesheet" href="../web/css/mui.min.css">
+    <link rel="stylesheet" href="../web/css/icons-extra.css">
+    <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
+    <link rel="stylesheet" href="../web/css/Style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="MaxBody">
+            <!-- Banner区域：开始 -->
+            <div class="Banner details">
+                <!-- Swiper -->
+                <div class="swiper-container Banner-index">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="../web/img/muwu.jpg" class="absolute" alt="轮播图1">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="../web/img/shuijiao.jpg" class="absolute" alt="轮播图1">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="../web/img/yuantiao.jpg" class="absolute" alt="轮播图1">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination "></div>
+                </div>
+            </div>
+            <!-- Banner区域：结束 -->
+
+            <!-- 规格信息区域 :开始-->
+            <div class="guigexinxi">
+                <h3>￥<span>9.90</span>-<span>22.80</span></h3>
+                <h5 >组心安理得附件ask大家ask来得及ask来得及啊啊手动阀建设规划阶段</h5>
+                <h6>十分简单快乐附件是独立开发技术对抗疗法士大夫昆仑山地方看老师的课发雷电术；罗世顶 森林的砍伐鲁大师了</h6>
+            </div>
+
+            <div class="guigexinxiTwo">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            Item 1
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            Item 2
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            Item 3
+                        </a>
+                    </li>
+                </ul>
+            </div>
+             <!-- 规格信息区域 :结束-->
+  
+        </div>
+        <!-- 结构内容区域：结束 -->
+
+
+
+        
+        <!-- 在线客服浮动按钮：结束 -->
+
+        <!-- 购物车浮动按钮：开始 -->
+        <div class="fd right" > 
+            <a href="#" style="display: none;">
+                <span class="mui-icon mui-icon-extra mui-icon-extra-top"></span>
+            </a>
+            <a >
+                <span class="mui-icon mui-icon-extra mui-icon-extra-custom"></span>
+            </a>
+
+        </div>
+      
+        <!-- 购物车浮动按钮：结束 -->
+
+
+    </div>
+    <!-- 结构内容区域：开始 -->
+
+    <script src="../web/js/jquery.min.js"></script>
+    <script src="../web/js/mui.min.js"></script>
+    <script src="../web/js/swiper-4.3.3.min.js"></script>
+    <script src="../web/js/vue.min.js"></script>
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "op"
+            }
+        })
+
+
+        //海报图轮播
+            var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'fraction',
+                }
+            });
+
+
+
+        //选项卡列表模块
+        $("#header").find(".swiper-slide").click(function () {
+            var index = $(this).index();
+            var left = $(this).outerWidth(true) * index;
+            $(".active-underline").css("left", left);
+        });
+
+
+        //回顶
+
+    var topbtn = $(".mui-icon-extra-top").parent(); //想要一键向上的按钮元素
+    var lastScroll = 0;
+    window.onscroll = function () {
+        //onscroll貌似为html5的属性
+        var top = $(window).scrollTop(); //初始均为0
+        var dheight=$(document).height();
+        var wheight=$(window).height();
+        var bheight=$(".buttomImg").height()*1.5;
+ 
+        var html=""
+
+                if (top > 250) {
+            topbtn.css("display", "");
+        }
+        else {
+            //若为起始状态，则不显示向上图标
+            topbtn.css("display", "none");
+        } 
+
+        if (top >= dheight - wheight- bheight) {
+           
+         }
+    }
+
+
+
+    </script>
+
+</body>
+
+</html>

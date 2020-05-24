@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1,, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title>云南土特产批发</title>
+    <link rel="stylesheet" href="../web/css/mui.min.css">
+    <link rel="stylesheet" href="../web/css/icons-extra.css">
+    <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
+    <link rel="stylesheet" href="../web/css/Style.css">
+</head>
+
+<body >
+    <div id="app">
+        <div class="MaxBody">
+            <div class="mui-card listmode">
+                <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-primary">
+                    <a class="mui-control-item mui-active" >
+                        商家配送
+                    </a>
+                    <a class="mui-control-item" >
+                        到店自提
+                    </a>
+                </div>
+                <br>
+        
+                <div id="item1">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <!-- <a class="mui-navigate-right" style="display: none;">
+                                <h6>暂未获取到收货地址</h6>
+                                <h4>请新建收货地址</h4>
+                            </a> -->
+                            <a class="mui-navigate-right" >
+                                <h6>重庆市万州市 <span class="mui-badge mui-badge-danger">默认</span></h6>
+                                <h4>雨天花园11-0-1</h4>
+                                <h6><span>张大彪</span> <span> 1985454654</span></h6>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-table-view-cell">
+                                <label>配送方式</label>
+                                <span class="mui-badge mui-bbb" style="color: #555;">快递</span>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div class="shangpinItam CaoBig GenerateOrder" v-for="cont in 1">
+                                <div class="top">
+                                    <a href="#">
+                                        <img alt="商品图片" class="bg" src="../web/img/60x60.gif">  
+                                    </a>
+                                </div>
+                                <div class="bottom">
+                                    <p class="title" style="margin: 0;">标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                                    <div class="textcontent">
+                                        <h6><span>芒果6斤装</span></h6>
+
+                                        <div class="addCat">
+                                            <label class="price">
+                                                <!-- <s>￥500.00</s> -->
+                                                <span>￥50.00</span>
+                                            </label>
+                                           <span style="float:right;">x1</span>
+                                        </div>
+                                    </div>   
+                                </div>
+                            </div>
+
+                            <div style="text-align:right;">
+                                <span style="color: #bbb;margin-right: 5px;">共1件</span> 商品小计：<label class="price"><span>￥50.00</span></label>
+                            </div>
+                        </li>
+
+                    </ul>
+                    
+
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">
+                                <label>优惠券</label>
+                                <span class="mui-badge mui-bbb">暂无可用</span>
+                            </a>
+                        </li>
+                    </ul>
+
+
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell inputText">
+                            <label>买家留言</label>
+                            <input type="text" placeholder="留言建议再(50字以内)">
+                        </li>
+                    </ul>
+                   <br>
+                    <!-- <div class="zidingyi-button-black">
+                        <a onclick="chooseArea()">确认</a>
+                    </div> -->
+                  
+                </div>
+            </div>
+
+           <!-- 底部操作框:开始 -->
+        <div class="buttomJiesuan Gorder">
+            <div class="buttomJiesuan-enter">
+                <div class="button">
+                    <a href="#">去结算</a>
+                </div>
+                <div class="text">
+                    <p>合计：<span>￥<label>500</label></span></p>
+                    <h6>含运费:￥0.00</h5>
+                </div>
+            </div>
+        </div>
+        <!-- 底部操作框:结束 -->
+        </div>
+     </div>
+        <!-- 结构内容区域：结束 -->
+
+    <!-- 结构内容区域：开始 -->
+
+    <script src="../web/js/jquery.min.js"></script>
+    <script src="../web/js/vue.min.js"></script>
+
+    
+    <script src="../web/js/mui.min.js"></script>
+    <script type="text/javascript" src="../web/js/style-piker.js"></script>
+
+
+
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "op",
+                sangpinActive:false
+            },
+            mounted() {
+               
+            },
+            methods: {
+                onShowBottomSangpin(){
+                    this.sangpinActive=!this.sangpinActive;
+                }
+            }
+        })
+		
+
+    var topbtn = $(".mui-icon-extra-top").parent(); //想要一键向上的按钮元素
+    var lastScroll = 0;
+    window.onscroll = function () {
+        //onscroll貌似为html5的属性
+        var top = $(window).scrollTop(); //初始均为0
+
+        if (top > 250) {
+            topbtn.css("display", "");
+        }
+        else {
+            //若为起始状态，则不显示向上图标
+            topbtn.css("display", "none");
+        } 
+    }
+
+
+
+        mui.init();
+        mui(function () {
+            cityPicker = new mui.PopPicker({
+                layer: 3
+            });
+            cityPicker.setData(cityData3);
+        });
+        //选择区域
+        function chooseArea() {
+            cityPicker.show(function (items) {
+                console.log(items);
+            });
+        }
+        //关闭选择器
+        function closeChoose() {
+            cityPicker.hide();
+        }
+
+
+    </script>
+
+</body>
+
+</html>

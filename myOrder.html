@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1,, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title>云南土特产批发</title>
+    <link rel="stylesheet" href="../web/css/mui.min.css">
+    <link rel="stylesheet" href="../web/css/icons-extra.css">
+    <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
+    <link rel="stylesheet" href="../web/css/Style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="MaxBody">
+            <!-- 选项卡列表模块：开始 -->
+            <div class="TabList">
+                <!-- 搜索框模块：开始 -->
+                <div class="content" style="padding-bottom: 0;">
+                    <div class="mui-input-row mui-search mui-active">
+                        <input type="search" class="mui-input-clear" placeholder="请输入您要搜索的商品">
+                    </div>
+                </div>
+                <!-- 搜索框模块：结束 -->
+                <div id="header">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide active-nav">新闻 <div class="active-underline"></div>
+                        </div>
+                        <div class="swiper-slide">财经</div>
+                        <div class="swiper-slide">娱乐</div>
+                        <div class="swiper-slide">体育</div>
+                        <div class="swiper-slide">订阅</div>
+                        <div class="swiper-slide">微博</div>
+                        <!-- <div class="swiper-slide">空间</div>
+                                          <div class="swiper-slide">书城</div> -->
+                    </div>
+                </div>
+                <div class="OrderItem">
+                    <div class="itemtop">
+                        <h5><span>店铺：果子王</span><label>等待玩家付款</label></h5>
+                        <h6>订单编号：asdasd454545234545452</h6>
+                    </div>
+                    <div class="itemin">
+                        <div class="shangpinItam CaoBig GenerateOrder" v-for="cont in 3">
+                            <div class="top">
+                                <a href="#">
+                                    <img alt="商品图片" class="bg" src="../web/img/60x60.gif">  
+                                </a>
+                            </div>
+                            <div class="bottom">
+                                <p class="title" style="margin: 0;">标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                                <div class="textcontent">
+                                    <h6><span>芒果6斤装</span></h6>
+
+                                    <div class="addCat">
+                                        <label class="price">
+                                            <!-- <s>￥500.00</s> -->
+                                            <span>￥50.00</span>
+                                        </label>
+                                       <span style="float:right;">x1</span>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itembottom">
+                        <div class="text">
+                            <a  style="float: left;">
+                                点击查看全部
+                              </a>     <p>合计：<span>￥<label><b>500</b></label></span></p>
+                        </div>
+                        <div class="button">
+                            <a  class="mui-btn">
+                              取消
+                            </a>
+                            <a class="mui-btn mui-btn-danger">
+                                付款
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 选项卡列表模块：结束 -->
+        
+        </div>
+        <!-- 结构内容区域：结束 -->
+
+
+
+        <!-- 在线客服浮动按钮：开始 -->
+        <div class="fd left" style="display: none;">
+            <a >
+                <span class="mui-icon mui-icon-extra mui-icon-extra-custom"></span>
+            </a>
+        </div>
+        <!-- 在线客服浮动按钮：结束 -->
+
+        <!-- 购物车浮动按钮：开始 -->
+        <div class="fd right" > 
+            <a href="#" style="display: none;">
+                <span class="mui-icon mui-icon-extra mui-icon-extra-top"></span>
+            </a>
+            <a >
+                <span class="mui-icon mui-icon-extra mui-icon-extra-custom"></span>
+            </a>
+            <a style="display: none;">
+                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+            </a>
+        </div>
+        <!-- 购物车浮动按钮：结束 -->
+
+
+
+    </div>
+    <!-- 结构内容区域：开始 -->
+
+    <script src="../web/js/jquery.min.js"></script>
+    <script src="../web/js/mui.min.js"></script>
+    <script src="../web/js/swiper-4.3.3.min.js"></script>
+    <script src="../web/js/vue.min.js"></script>
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "op"
+            }
+        })
+
+
+
+
+        //选项卡列表模块
+        var navSwiper = new Swiper('#header', {
+            freeMode: true,
+            slidesPerView: 'auto',
+            freeModeSticky: true,
+            spaceBetween: 10,
+            slidesPerView: 5,
+
+        });
+        //选项卡列表模块
+        $("#header").find(".swiper-slide").click(function () {
+            var index = $(this).index();
+            var i = index < 0 ? 0 : index - 2;
+            navSwiper.slideTo(i);
+            var left = $(this).outerWidth(true) * index;
+            $(".active-underline").css("left", left);
+        });
+
+
+        //回顶
+
+    var topbtn = $(".mui-icon-extra-top").parent(); //想要一键向上的按钮元素
+    var lastScroll = 0;
+    window.onscroll = function () {
+        //onscroll貌似为html5的属性
+        var top = $(window).scrollTop(); //初始均为0
+        var dheight=$(document).height();
+        var wheight=$(window).height();
+        var bheight=$(".buttomImg").height()*1.5;
+ 
+        var html=""
+
+                if (top > 250) {
+            topbtn.css("display", "");
+        }
+        else {
+            //若为起始状态，则不显示向上图标
+            topbtn.css("display", "none");
+        } 
+
+        if (top >= dheight - wheight- bheight) {
+           
+         }
+    }
+
+
+
+    </script>
+
+</body>
+
+</html>

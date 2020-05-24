@@ -1,11 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>购物车</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1,, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title>云南土特产批发</title>
+    <link rel="stylesheet" href="../web/css/mui.min.css">
+    <link rel="stylesheet" href="../web/css/icons-extra.css">
+    <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
+    <link rel="stylesheet" href="../web/css/Style.css">
 </head>
+
 <body>
-    
+    <div id="app">
+        <div class="MaxBody">
+
+             <!-- 顶部操作栏:开始 -->
+            <header id="header" class="mui-bar mui-bar-nav">
+                <button class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left"><span
+                        class="mui-icon mui-icon-left-nav"></span>返回首页</button>
+                <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">编辑</button>
+            </header>
+            <!-- 顶部操作栏:结束 -->
+
+            <div class="zw"></div>
+            <!-- 购物车列表：开始 -->
+            <div class="CantList">
+                <form >
+                    <div class="checkboxitem" v-for="cont in 5">
+                        <div class="mui-input-row mui-checkbox mui-left Cat-checkbox">
+                            <input name="checkbox" value="Item 1" type="checkbox" checked>
+                            <div class="checkboxitem-enter">
+                                <div class="left">
+                                    <a href="#">
+                                        <img  src="../web/img/shuijiao.jpg" />
+                                    </a>
+                                </div>
+                                <div class="right">
+                                   <p>撒旦和你分离Kahn是否克拉斯诺夫克拉斯诺夫阿萨的哪家啊可是</p>
+                                   <div class="catfenlei"  v-on:click="onShowBottomSangpin">
+                                       八斤装卧槽<span class="mui-icon mui-icon-arrowdown"></span>
+                                   </div>
+                                   <div class="shuliang">
+                                     <span>￥500</span>
+                                     <div class="mui-numbox">
+                                        <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                                        <input class="mui-input-numbox" type="number">
+                                        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                    </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+				</form>
+            </div>
+            <!-- 购物车列表：结束 -->
+
+
+
+            <!-- 更多精选列表模块：开始 -->
+            <br>
+            <h5 style="text-align: center;">更多精选</h5>
+            <div class="BasicList">
+
+                <div class="content">
+                    <div class="BasicList-enter">
+                        <ul>
+                            <li v-for="cont in 6">
+                                <div class="shangpinItam big">
+                                    <div class="top">
+                                        <a href="#">
+                                            <p class="toubiao">爱心组农</p>
+                                            <img alt="商品图片" class="bg" src="../web/img/60x60.gif">
+                                            <p class="quehuo" style="display:none;">缺货</p>
+                                            <p class="quehuo yusou">预售</p>
+                                        </a>
+                                    </div>
+                                    <div class="bottom">
+                                        <p class="title">标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                                        <div class="addCat">
+                                            <label class="price">
+                                                <!-- <s>￥500.00</s> -->
+                                                <span>￥50.00</span>
+                                            </label>
+                                            <!-- <a class="Cat-Icon">
+                                                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                  
+                </div>
+            </div>
+            <!-- 更多精选列表模块：结束 -->
+
+
+            <!-- 商家底部海报图：开始 -->
+            <div class="buttomImg content">
+                 <img src="../web/img/shuijiao.jpg" alt="商家底部图片" class="bg" />
+            </div>
+            <!-- 商家底部海报图：结束 -->
+        </div>
+        <!-- 结构内容区域：结束 -->
+
+
+
+        <!-- 底部操作框:开始 -->
+        <div class="buttomJiesuan">
+            <div class="mui-input-row mui-checkbox mui-left ">
+                <input name="checkbox" value="Item 1" type="checkbox" checked>
+                <label>全选</label>
+            </div>
+
+            <div class="buttomJiesuan-enter">
+                <div class="button">
+                    <a href="#">去结算</a>
+                </div>
+                <div class="text">
+                    <p>合计：<span>￥<label>500</label></span></p>
+                    <h6>不含运费</h5>
+                </div>
+            </div>
+        </div>
+        <!-- 底部操作框:结束 -->
+
+
+        <!-- 右侧浮动按钮：开始 -->
+        <div class="fd right"  > 
+            <a href="#" style="display: none;">
+                <span class="mui-icon mui-icon-extra mui-icon-extra-top"></span>
+            </a>
+            <a >
+                <span class="mui-icon mui-icon-extra mui-icon-extra-custom"></span>
+            </a>
+        </div>
+        <!-- 右侧浮动按钮：结束 -->
+
+        
+        <!-- 底部加入购物车选项 ：开始-->
+        <div class="bottomSangpin" :class="{active:sangpinActive}">
+              
+                <div class="bottomSangpin-enter">
+                    <a class="closeempty" v-on:click="onShowBottomSangpin"><span class="mui-icon mui-icon-closeempty"></span></a>
+                    <div class="GouwuCat">
+                        <div class="shangpinItam CaoBig minihenban">
+                            <div class="top">
+                                <a href="#">
+                                    <p class="toubiao">爱心组农</p>
+                                    <img alt="商品图片" class="bg" src="../web/img/60x60.gif">
+                                    <p class="quehuo" style="display:none;">缺货</p>
+                                    <p class="quehuo yusou">预售</p>
+                                </a>
+                            </div>
+                            <div class="bottom">
+                                <p class="title" style="margin: 0;">标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
+                                <div class="textcontent">
+                                    <b>￥<span>500</span></b>
+                                    <h6>剩余：<span>251518</span>件</h6>
+                                    <h6>已选：<span>芒果6斤装</span></h6>
+                                </div>   
+                            </div>
+                        </div>
+
+                        <div class="GuigeList">
+                            <div>
+                                <h5>规格：</h5>
+                                <ul>
+                                    <li class="active">水蜜桃5斤装</li>
+                                    <li v-for="cont in 5">水蜜桃5斤装</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="shuliang" style="position: relative;">
+                                <h5 >购买数量：</h5>
+                                    <div class="mui-numbox">
+                                       <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                                       <input class="mui-input-numbox" type="number" >
+                                       <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                                   </div>
+                                  </div>
+                        </div>
+                    </div>
+                    <div class="botton-bottomSangpin"  style="display: none;">
+                        <a>加入购物车</a>
+                        <a>立即购买</a>
+                    </div>
+                    <div class="botton-bottomSangpin big">
+                        <a>确认</a>
+                    </div>
+                </div>
+        </div>
+        <!-- 底部加入购物车选项 ：结束-->
+
+    </div>
+    <!-- 结构内容区域：开始 -->
+
+    <script src="../web/js/jquery.min.js"></script>
+    <script src="../web/js/mui.min.js"></script>
+    <script src="../web/js/vue.min.js"></script>
+    <script>
+
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    msg: "op",
+                    sangpinActive: false,
+                    suliang:1,
+                },
+                mounted() {
+
+                },
+                methods: {
+                    onShowBottomSangpin() {
+                        this.sangpinActive = !this.sangpinActive;
+                    }
+                },
+                filters: {
+                    capitalize: function (value) {
+                        if(value<=0) value=1;
+                        return value;
+                    }
+                }
+            })
+		
+
+    var topbtn = $(".mui-icon-extra-top").parent(); //想要一键向上的按钮元素
+    var lastScroll = 0;
+    window.onscroll = function () {
+        //onscroll貌似为html5的属性
+        var top = $(window).scrollTop(); //初始均为0
+
+        if (top > 250) {
+            topbtn.css("display", "");
+        }
+        else {
+            //若为起始状态，则不显示向上图标
+            topbtn.css("display", "none");
+        } 
+    }
+
+    $(".mui-input-numbox").change(function(){
+        if($(this).val()<=0){
+            $(this).val(1);
+        }
+
+    })
+
+
+
+
+
+    </script>
+
 </body>
+
 </html>
