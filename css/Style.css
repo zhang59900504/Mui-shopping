@@ -228,3 +228,4 @@ a.closeempty .mui-icon{font-size: 29px;}
 .bottom-goumai .right a{display: block;float: left;width:29vw; line-height: 3.3em;text-align: center;color: #fff;}
 .bottom-goumai .right a:first-child{background: var(--Ccolor)}
 .bottom-goumai .right a:last-child{background: var(--Zcolor)}
+.mui-segmented-control.mui-segmented-control-inverted{  background: #fff;}
