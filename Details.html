@@ -13,12 +13,164 @@
     <link rel="stylesheet" href="../web/css/swiper-4.3.3.min.css">
     <link rel="stylesheet" href="../web/css/Style.css">
 </head>
-
+<style type="text/css">
+    .mui-preview-image.mui-fullscreen {
+        position: fixed;
+        z-index: 20;
+        background-color: #000;
+    }
+    .mui-preview-header,
+    .mui-preview-footer {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        z-index: 10;
+    }
+    .mui-preview-header {
+        height: 44px;
+        top: 0;
+    }
+    .mui-preview-footer {
+        height: 50px;
+        bottom: 0px;
+    }
+    .mui-preview-header .mui-preview-indicator {
+        display: block;
+        line-height: 25px;
+        color: #fff;
+        text-align: center;
+        margin: 15px auto 4;
+        width: 70px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    .mui-preview-image {
+        display: none;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    .mui-preview-image.mui-preview-in {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+    }
+    .mui-preview-image.mui-preview-out {
+        background: none;
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
+    }
+    .mui-preview-image.mui-preview-out .mui-preview-header,
+    .mui-preview-image.mui-preview-out .mui-preview-footer {
+        display: none;
+    }
+    .mui-zoom-scroller {
+        position: absolute;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        -webkit-backface-visibility: hidden;
+    }
+    .mui-zoom {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .mui-slider .mui-slider-group .mui-slider-item img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+        width: 100%;
+    }
+    .mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+        display: inline-table;
+    }
+    .mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .mui-preview-loading {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    .mui-preview-loading.mui-active {
+        display: block;
+    }
+    .mui-preview-loading .mui-spinner-white {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+        height: 50px;
+        width: 50px;
+    }
+    .mui-preview-image img.mui-transitioning {
+        -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    p img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 <body>
     <div id="app">
         <div class="MaxBody">
             <!-- Banner区域：开始 -->
-            <div class="Banner details">
+            <div class="Banner details ">
                 <!-- Swiper -->
                 <div class="swiper-container Banner-index">
                     <div class="swiper-wrapper">
@@ -54,24 +206,69 @@
             <div class="guigexinxiTwo">
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell">
-                        <a class="mui-navigate-right">
-                            Item 1
+                        <a class="mui-table-view-cell">
+                            <label><span class="hui">配送费：</span>￥0.00-8.00</label>
+                            <span class="mui-badge mui-bbb" style="color: #555;">快递</span>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-table-view-cell">
+                           <label><span class="hui">库存：&#12288; </span >剩余151035135</label>件
+                          <span class="mui-badge mui-bbb" style="color: #555;">有货</span>
                         </a>
                     </li>
                     <li class="mui-table-view-cell">
                         <a class="mui-navigate-right">
-                            Item 2
-                        </a>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <a class="mui-navigate-right">
-                            Item 3
+                            <label><span class="hui">选择：&#12288; </span >规格</label>
+                            
                         </a>
                     </li>
                 </ul>
             </div>
              <!-- 规格信息区域 :结束-->
-  
+
+
+            <!-- 内容区域 ：开始 -->
+             <div class="content Xiangqing">
+                   <h5><b>【产品规格】</b> <span>中果一斤约35个，大果一斤约25个</span></h5>
+                   <h5><b>【产品产地】</b> <span>云南元江三华李</span></h5>
+                   <h5><b>【发货时间】</b> <span>下单后48小时之内发货，如遇天气因素顺延</span></h5>
+                   <h5><b>【物流详情】</b> <span><label class="red">中通，韵达快递随机，</label>新疆西藏内蒙北京不发，青海宁夏甘肃海南+2，上海+1块</span></h5>
+                   <h5><b>【特别说明】</b> <span>因生鲜产品具有特殊性和相关规定，下单时请一定认真确认收件信息，因客户原因导致转寄、延派、误派、擅自拒收、退货等不在理赔范围。</span></h5>
+                   <h5><b>【温馨提示】</b> <span>收到货后有任何质量问题，请您在签收后尽快拍照联系客服进行售后理赔，我们会及时为您处理，保障您的权益</span></h5>
+                <div class="Xiangqing-enter">
+                    <img src="../web/img/muwu.jpg"  alt="轮播图1">
+                </div>
+             </div>
+             <!-- 内容区域 ：结束 -->
+
+
+             <!-- 底部购买区域：开始 -->
+             <div class="bottom-goumai">
+                <div class="left">
+                    <ul class="bottom-list">
+                        <li><a href="#">
+                                <span class="mui-icon mui-icon-extra mui-icon-extra-card "><span class="mui-badge"></span></span>
+                                <div>客服</div>
+                            </a></li>
+                        <li><a href="#">
+                                <span class="mui-icon mui-icon-extra mui-icon-extra-card "><span class="mui-badge"></span></span>
+                                <div>客服</div>
+                            </a></li>
+                        <li><a href="#">
+                                <span class="mui-icon mui-icon-extra mui-icon-extra-card "><span class="mui-badge"></span></span>
+                                <div>客服</div>
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                        <a>加入购物车</a>
+                        <a>立即购买</a>
+
+                </div>
+             </div>
+             <!-- 底部购买区域：结束 -->
+
         </div>
         <!-- 结构内容区域：结束 -->
 
@@ -84,11 +281,7 @@
         <div class="fd right" > 
             <a href="#" style="display: none;">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-top"></span>
-            </a>
-            <a >
-                <span class="mui-icon mui-icon-extra mui-icon-extra-custom"></span>
-            </a>
-
+            </a>    
         </div>
       
         <!-- 购物车浮动按钮：结束 -->
@@ -101,6 +294,8 @@
     <script src="../web/js/mui.min.js"></script>
     <script src="../web/js/swiper-4.3.3.min.js"></script>
     <script src="../web/js/vue.min.js"></script>
+    <script src="../web/js/mui.zoom.js"></script>
+	<script src="../web/js/mui.previewimage.js"></script>
     <script>
 
         var app = new Vue({
@@ -155,10 +350,10 @@
          }
     }
 
-
+    mui.previewImage();
 
     </script>
 
 </body>
-
+     
 </html>

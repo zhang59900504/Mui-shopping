@@ -211,3 +211,20 @@ a.closeempty .mui-icon{font-size: 29px;}
 .guigexinxi h3{color:red;}
 .guigexinxi h5{color: #555; padding: 5px 0;}
 .guigexinxiTwo .mui-table-view-cell:after{height: 0;}
+.guigexinxiTwo {color: #555;}
+.hui{color: #bbb;}
+.Xiangqing>h5{color: #555;text-indent: -5px;margin-bottom: 10px;line-height: 1.5em;}
+.Xiangqing>h5 span{margin-left: 10px; }
+.Xiangqing{padding: 10px;}
+.red{color: red;}
+.Xiangqing-enter img{display: block;max-width: 100%; margin: 0 auto;}
+
+.bottom-goumai{padding: 5px; position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;z-index: 105;}
+.bottom-goumai .left{display:inline-block;}
+.bottom-list li{display: inline-block;text-align: center; width: 10vw;}
+.bottom-list li a{    line-height: 1.3em; color: #555; position: relative}
+.bottom-list li a .mui-icon .mui-badge{padding: 0; margin: 0;     top: -7px; left: 88%;   width: 6px;  height: 6px;}
+.bottom-goumai .right{float: right;padding: 1px;}
+.bottom-goumai .right a{display: block;float: left;width:29vw; line-height: 3.3em;text-align: center;color: #fff;}
+.bottom-goumai .right a:first-child{background: var(--Ccolor)}
+.bottom-goumai .right a:last-child{background: var(--Zcolor)}
